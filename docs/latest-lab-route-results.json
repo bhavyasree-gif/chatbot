@@ -1,0 +1,162 @@
+{
+  "1.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "1.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "2.1": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "2.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "3.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "3.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "4.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "4.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "5.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "5.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "6.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "6.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "7.1": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "7.2": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "8.1": {
+    "status": "manual"
+  },
+  "8.2": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "9.1": {
+    "status": "manual"
+  },
+  "9.2": {
+    "status": "manual"
+  },
+  "10.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "10.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "11.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "11.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "12.1": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "12.2": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "13.1": {
+    "status": "manual"
+  },
+  "13.2": {
+    "status": "manual"
+  },
+  "14.1": {
+    "http": 200,
+    "passed": null,
+    "error": null
+  },
+  "14.2": {
+    "status": "manual"
+  },
+  "15.1": {
+    "status": "manual"
+  },
+  "15.2": {
+    "status": "manual"
+  },
+  "16.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "16.2": {
+    "status": "manual"
+  },
+  "17.1": {
+    "status": "manual"
+  },
+  "17.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "18.1": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  },
+  "18.2": {
+    "http": 200,
+    "passed": true,
+    "error": null
+  }
+}

@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+.venv/
+**/__pycache__/
+*.pyc
+node_modules/
+frontend/dist/
+# Security-lab private keys and generated certificates
+**/tls/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Generated files from standalone lab runs
+assignments/chapter_13/.lab13/
+assignments/chapter_13/k8s/
+assignments/chapter_14/backups/
+
+.env
+.venv/
+node_modules/

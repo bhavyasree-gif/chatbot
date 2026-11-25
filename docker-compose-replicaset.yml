@@ -1,0 +1,26 @@
+# Disposable three-member lab. Host ports are loopback-only and distinct from the single-node demo.
+services:
+  mongo-rs0-1:
+    image: mongo:7
+    container_name: mongo-rs0-1
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    ports: ["127.0.0.1:27101:27017"]
+    volumes: ["rs0_data1:/data/db"]
+
+  mongo-rs0-2:
+    image: mongo:7
+    container_name: mongo-rs0-2
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    ports: ["127.0.0.1:27102:27017"]
+    volumes: ["rs0_data2:/data/db"]
+
+  mongo-rs0-3:
+    image: mongo:7
+    container_name: mongo-rs0-3
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    volumes: ["rs0_data3:/data/db"]
+
+volumes:
+  rs0_data1:
+  rs0_data2:
+  rs0_data3:

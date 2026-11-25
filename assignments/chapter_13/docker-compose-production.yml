@@ -1,0 +1,37 @@
+# Authenticated replica-set exercise for a disposable local environment.
+x-member: &member
+  image: mongo:7
+  entrypoint: ["/bin/sh", "-ec"]
+  command:
+    - |
+      cp /run/lab-keyfile /tmp/cti-lab-keyfile
+      chown mongodb:mongodb /tmp/cti-lab-keyfile
+      chmod 400 /tmp/cti-lab-keyfile
+      exec docker-entrypoint.sh mongod --replSet cti-secure --bind_ip_all --keyFile /tmp/cti-lab-keyfile
+
+services:
+  prod-mongo-1:
+    <<: *member
+    ports: ["127.0.0.1:27201:27017"]
+    volumes:
+      - prod_data1:/data/db
+      - ./.lab13/keyfile:/run/lab-keyfile:ro
+
+  prod-mongo-2:
+    <<: *member
+    ports: ["127.0.0.1:27202:27017"]
+    volumes:
+      - prod_data2:/data/db
+      - ./.lab13/keyfile:/run/lab-keyfile:ro
+
+  prod-mongo-3:
+    <<: *member
+    ports: ["127.0.0.1:27203:27017"]
+    volumes:
+      - prod_data3:/data/db
+      - ./.lab13/keyfile:/run/lab-keyfile:ro
+
+volumes:
+  prod_data1:
+  prod_data2:
+  prod_data3:

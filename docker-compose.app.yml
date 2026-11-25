@@ -1,0 +1,42 @@
+# Local demonstration deployment only. MongoDB is private to this Compose network.
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    volumes:
+      - cti-mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - cti-ollama-data:/root/.ollama
+
+  cti-sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      AI_PROVIDER: ${AI_PROVIDER:-ollama}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      OPENAI_EMBED_MODEL: ${OPENAI_EMBED_MODEL:-text-embedding-3-small}
+      OLLAMA_BASE_URL: http://ollama:11434
+      MONGO_URI: mongodb://mongo:27017/
+      DATABASE_NAME: ctiSentinelDB
+      FLASK_HOST: 0.0.0.0
+      FLASK_PORT: 5000
+      ENABLE_LAB_RUNNER: "0"
+    ports:
+      - "127.0.0.1:5000:5000"
+volumes:
+  cti-mongo-data:
+  cti-ollama-data:
